@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildTrafficLight", "BuildTrafficLight\BuildTrafficLight.csproj", "{01C4CA95-C4B9-4B8A-A866-47116174EEF8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{ECA86604-3BFB-4023-892D-AE29D7962222}"
+	ProjectSection(SolutionItems) = preProject
+		Assets\TrafficLight.ts = Assets\TrafficLight.ts
+		Assets\TrafficLightsCollection.ts = Assets\TrafficLightsCollection.ts
+		Assets\TrafficLightsWidget.html = Assets\TrafficLightsWidget.html
+		Assets\TrafficLightsWidget.ts = Assets\TrafficLightsWidget.ts
+		Assets\TrafficLightsWidgetConfiguration.html = Assets\TrafficLightsWidgetConfiguration.html
+		Assets\TrafficLightsWidgetConfiguration.ts = Assets\TrafficLightsWidgetConfiguration.ts
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01C4CA95-C4B9-4B8A-A866-47116174EEF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01C4CA95-C4B9-4B8A-A866-47116174EEF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01C4CA95-C4B9-4B8A-A866-47116174EEF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01C4CA95-C4B9-4B8A-A866-47116174EEF8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
