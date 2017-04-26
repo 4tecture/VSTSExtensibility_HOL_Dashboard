@@ -1,14 +1,14 @@
 {
   "manifestVersion": 1,
   "id": "4tecture-HOL-DashboardExtensibility-BuildTrafficLight",
-  "version": "0.3.0",
+  "version": "0.1.0",
   "name": "HOL Build Traffic Light",
   "scopes": [ "vso.build" ],
   "description": "This extension allows you to add build traffic lights to your dashboard to visualize the state of a specific build definition and its builds.",
   "publisher": "4tecture",
   "public": false,
   "icons": {
-    "default": "img/logo.png"
+    "default": "static/images/logo.png"
   },
   "targets": [
     {
@@ -30,24 +30,19 @@
   },
   "files": [
     {
-      "path": "css",
-      "addressable": true
+      "path": "dist",
+      "addressable": true,
+      "packagePath": "/"
     },
     {
-      "path": "img",
-      "addressable": true
+      "path": "static",
+      "addressable": true,
+      "packagePath": "/"
     },
     {
-      "path": "scripts",
-      "addressable": true
-    },
-    {
-      "path": "TrafficLightsWidget.html",
-      "addressable": true
-    },
-    {
-      "path": "TrafficLightsWidgetConfiguration.html",
-      "addressable": true
+      "path": "node_modules/vss-web-extension-sdk/lib",
+      "addressable": true,
+      "packagePath": "lib"
     }
   ],
   "categories": [
@@ -64,8 +59,8 @@
       "properties": {
         "name": "Build Traffic Lights Widgets",
         "description": "This widget allows you to add build traffic lights to your dashboard to visualize the state of a specific build definition and its builds.",
-        "catalogIconUrl": "img/CatalogIcon.png",
-        "previewImageUrl": "img/preview.png",
+        "catalogIconUrl": "images/CatalogIcon.png",
+        "previewImageUrl": "images/preview.png",
         "uri": "TrafficLightsWidget.html",
         "supportedSizes": [
           {

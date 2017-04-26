@@ -1,6 +1,6 @@
 ﻿/// <reference path='../node_modules/vss-web-extension-sdk/typings/VSS.d.ts' />
-/// <reference path="./TrafficLightsCollection.ts" />
-import TrafficLights = require("scripts/TrafficLightsCollection");
+/// <reference path="trafficlightscollection.ts" />
+import TrafficLights = require("./TrafficLightsCollection");
 
 function GetSettings(widgetSettings) {
     var config = JSON.parse(widgetSettings.customSettings.data);

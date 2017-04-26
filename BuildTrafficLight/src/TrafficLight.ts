@@ -10,6 +10,7 @@ export class TrafficLight {
 
     constructor(trafficLightElement: HTMLDivElement) {
         this.trafficLightElement = trafficLightElement;
+        this.currentLightState = TrafficLightState.None;
     }
 
     public UpdateBuildState(build: Contracts.Build) {

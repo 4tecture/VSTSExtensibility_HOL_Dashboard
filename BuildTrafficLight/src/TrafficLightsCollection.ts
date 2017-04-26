@@ -1,8 +1,7 @@
-﻿/// <reference path="./trafficlight.ts" />
-/// <reference path='../node_modules/vss-web-extension-sdk/typings/VSS.d.ts' />
+﻿/// <reference path='../node_modules/vss-web-extension-sdk/typings/VSS.d.ts' />
 import Contracts = require("TFS/Build/Contracts");
 import BuildRestClient = require("TFS/Build/RestClient");
-import TrafficLight = require("scripts/TrafficLight");
+import TrafficLight = require("./TrafficLight");
 
 export class TrafficLightsCollection {
 
@@ -30,7 +29,9 @@ export class TrafficLightsCollection {
     public updateBuildState() {
         var buildClient = BuildRestClient.getClient();
         buildClient.getBuilds(this.projectname, [this.buildDefinitionId], undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, this.numberOfBuilds).then((buildResults: Contracts.Build[]) => {
-            this.builds = buildResults;
+            this.builds = buildResults.sort((a, b) => {
+                return b.queueTime.getTime() - a.queueTime.getTime();
+            });
             this.renderLights();
 
             buildClient.getDefinition(this.buildDefinitionId, this.projectname).then((buildDefinitionResult: Contracts.DefinitionReference) => {
@@ -41,7 +42,7 @@ export class TrafficLightsCollection {
     }
 
     private renderLights() {
-    
+
         if (this.builds != null && this.builds.length > 0) {
             if (this.trafficLights == null || this.trafficLights.length != this.builds.length) {
                 while (this.trafficLightsElement.hasChildNodes()) {
@@ -61,9 +62,9 @@ export class TrafficLightsCollection {
                     this.trafficLights[i].UpdateBuildState(this.builds[i]);
                 }
             }
-            
+
         }
-        else{
+        else {
             this.trafficLights = null;
             var paragraph = document.createElement("p");
             paragraph.innerHTML = "No builds available";

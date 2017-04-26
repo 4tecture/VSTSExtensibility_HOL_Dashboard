@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BuildTrafficLight</RootNamespace>
     <AssemblyName>BuildTrafficLight</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
     <UseIISExpress>true</UseIISExpress>
@@ -44,14 +44,14 @@
     <None Include=".vscode\tasks.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\app.css" />
-    <Content Include="img\CatalogIcon.png" />
-    <Content Include="img\logo.png" />
-    <Content Include="img\preview.png" />
-    <Content Include="scripts\VSS.SDK.js" />
+    <Content Include="static\css\app.css" />
+    <Content Include="static\images\CatalogIcon.png" />
+    <Content Include="static\images\logo.png" />
+    <Content Include="src\VSS.SDK.js" />
+    <Content Include="static\images\preview.png" />
+    <Content Include="static\TrafficLightsWidget.html" />
+    <Content Include="static\TrafficLightsWidgetConfiguration.html" />
     <Content Include="test\TestSpec.js" />
-    <Content Include="TrafficLightsWidget.html" />
-    <Content Include="TrafficLightsWidgetConfiguration.html" />
     <None Include="readme.md" />
     <None Include="package.json" />
     <None Include=".gitignore" />
@@ -61,12 +61,13 @@
     <None Include="vss-extension.json" />
     <None Include="settings.tfx.json" />
     <None Include="gruntfile.js" />
+    <None Include="tsconfig.json" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="scripts\TrafficLight.ts" />
-    <TypeScriptCompile Include="scripts\TrafficLightsCollection.ts" />
-    <TypeScriptCompile Include="scripts\TrafficLightsWidget.ts" />
-    <TypeScriptCompile Include="scripts\TrafficLightsWidgetConfiguration.ts" />
+    <TypeScriptCompile Include="src\TrafficLightsWidgetConfiguration.ts" />
+    <TypeScriptCompile Include="src\TrafficLightsWidget.ts" />
+    <TypeScriptCompile Include="src\TrafficLightsCollection.ts" />
+    <TypeScriptCompile Include="src\TrafficLight.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications\Microsoft.WebApplication.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications\Microsoft.WebApplication.targets')" />
@@ -91,17 +92,6 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
     <TypeScriptSourceMap>true</TypeScriptSourceMap>
-    <TypeScriptTarget>ES5</TypeScriptTarget>
-    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
-    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
-    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
-    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
-    <TypeScriptOutFile />
-    <TypeScriptOutDir />
-    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
-    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
-    <TypeScriptMapRoot />
-    <TypeScriptSourceRoot />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <TypeScriptRemoveComments>true</TypeScriptRemoveComments>

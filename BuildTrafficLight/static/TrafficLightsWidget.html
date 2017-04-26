@@ -1,10 +1,11 @@
 ﻿<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <title>TypeScript HTML App</title>
     <link rel="stylesheet" href="css/app.css" type="text/css" />
-    <script src="scripts/VSS.SDK.js"></script>
+    <script src="lib/VSS.SDK.js"></script>
 </head>
 <body>
     <script type="text/javascript">
@@ -12,29 +13,21 @@
         VSS.init({
             explicitNotifyLoaded: true,
             setupModuleLoader: true,
-            moduleLoaderConfig: {
-                paths: {
-                    "Scripts": "scripts"
-                }
-            },
             usePlatformScripts: true,
             usePlatformStyles: true
         });
 
         // Wait for the SDK to be initialized
         VSS.ready(function () {
-            require(["Scripts/TrafficLightsWidgetConfiguration"], function (configuration) {
-
+            require(["TrafficLightsWidget"], function (tlwidget) {
             });
         });
     </script>
 
-    <div id="trafficlightswidgetconfiguration" class="widget-configuration">
-        <div class="dropdown" id="buildDefinition-dropdown">
-            <label>Build Definition: </label>
-            <div class="wrapper">
-                <select id="selectBuildDefinition"></select>
-            </div>
+    <div class="widget">
+        <h2 class="title" id="buildDefinitionTitle"></h2>
+        <div class="content" id="content">
+
         </div>
     </div>
 </body>
