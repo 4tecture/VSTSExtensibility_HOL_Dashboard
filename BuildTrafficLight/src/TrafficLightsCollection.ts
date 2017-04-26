@@ -12,7 +12,7 @@ export class TrafficLightsCollection {
     trafficLightsElement: HTMLElement;
     builds: Contracts.Build[];
     trafficLights: TrafficLight.TrafficLight[];
-    timerToken: number;
+    timerToken: any;
 
     constructor(projectname: string, builddefinition: number, numberofbuilds: number, element: HTMLElement) {
         this.projectname = projectname
