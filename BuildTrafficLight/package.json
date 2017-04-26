@@ -19,7 +19,7 @@
     "@types/node": "*",
     "vss-web-extension-sdk": "^2.109.1"
   },
-  "name": "BuildTrafficLight",
+  "name": "buildtrafficlight",
   "private": true,
   "version": "0.0.0"
 }
