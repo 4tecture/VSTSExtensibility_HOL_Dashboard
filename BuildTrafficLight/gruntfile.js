@@ -7,6 +7,14 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON("package.json"),
         settings: grunt.file.readJSON("settings.tfx.json"),
+        ts: {
+            build: {
+                tsconfig: true
+            },
+            options: {
+                fast: 'never'
+            }
+        },
         exec: {
             package: {
                 command: "tfx extension create --manifest-globs <%= settings.package.manifestGlobs %>",
@@ -18,16 +26,16 @@ module.exports = function (grunt) {
                 stdout: true,
                 stderr: true
             },
-			tsdinit:{
-				command: "typings install knockout requirejs",
+            tsdinit: {
+                command: "typings install knockout requirejs",
                 stdout: true,
                 stderr: true
-			},
-			tsdlink:{
-				command: "typings init",
+            },
+            tsdlink: {
+                command: "typings init",
                 stdout: true,
                 stderr: true
-			},
+            },
             publish: {
                 command: "tfx extension publish --manifest-globs <%= settings.package.manifestGlobs %> --share-with <%= settings.publish.shareWith %> --token <%= settings.publish.token %>",
                 stdout: true,
@@ -36,7 +44,9 @@ module.exports = function (grunt) {
         }
     });
 
+    grunt.loadNpmTasks("grunt-ts");
     grunt.loadNpmTasks("grunt-exec");
     grunt.loadNpmTasks("grunt-contrib-copy");
+    grunt.registerTask("build", ["ts:build", "exec:package"]);
 
 };
