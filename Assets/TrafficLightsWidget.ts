@@ -1,6 +1,6 @@
 ﻿/// <reference path='../node_modules/vss-web-extension-sdk/typings/VSS.d.ts' />
 /// <reference path="trafficlightscollection.ts" />
-import TrafficLights = require("scripts/TrafficLightsCollection"); 
+import TrafficLights = require("./TrafficLightsCollection");
 
 function GetSettings(widgetSettings) {
     var config = JSON.parse(widgetSettings.customSettings.data);
@@ -22,8 +22,8 @@ VSS.require("TFS/Dashboards/WidgetHelpers", function (WidgetHelpers) {
     VSS.register("BuildTrafficLightsWidget", function () {
         return {
             load: function (widgetSettings) {
-                RenderTrafficLights(WidgetHelpers, widgetSettings);  
-                return WidgetHelpers.WidgetStatusHelper.Success();  
+                RenderTrafficLights(WidgetHelpers, widgetSettings);
+                return WidgetHelpers.WidgetStatusHelper.Success();
             },
             reload: function (widgetSettings) {
                 RenderTrafficLights(WidgetHelpers, widgetSettings);
